@@ -8,11 +8,11 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <Header />
-      <Intro />
-      <Instructions />
+      {/* <Header /> */}
+      {/* <Intro /> */}
+      {/*<Instructions />*/}
       <Create />
-      <Footer />
+      {/* <Footer />  */}
     </>
   );
 }
