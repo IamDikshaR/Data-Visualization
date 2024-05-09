@@ -45,12 +45,12 @@ const Table = ({ type }) => {
   };
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-xl border border-slate-500 rounded-md p-2 min-w-60 text-center text-white bg-black">
-        Create Table
+      <h2 className="text-xl border border-slate-500 rounded-md p-2 px-4 min-w-80 text-center text-white bg-black">
+        Create {type} Table
       </h2>
       <div className="m-2">
         <label htmlFor="rows" className="mx-2">
-          Number of Rows ={" "}
+          Number of Rows =
         </label>
         <input
           type="number"
@@ -62,7 +62,7 @@ const Table = ({ type }) => {
       </div>
       <div className="mb-2">
         <label htmlFor="columns" className="mx-2">
-          Number of Columns ={" "}
+          Number of Columns =
         </label>
         <input
           type="number"
@@ -81,8 +81,8 @@ const Table = ({ type }) => {
                   <input
                     className={
                       rowIndex == 0
-                        ? "border-1 bg-slate-600 text-white p-1 pl-2 rounded"
-                        : "border-1 bg-slate-300 p-1 pl-2 rounded"
+                        ? "border-1 bg-slate-600 text-white p-1 pl-2 rounded max-w-24"
+                        : "border-1 bg-slate-300 p-1 pl-2 rounded max-w-24"
                     }
                     type="text"
                     value={cellData}

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import DataTable from "./DataTable";
 import Table from "./Table";
 import CreateGraph from "./CreateGraph";
 
@@ -21,6 +20,9 @@ const Types = () => {
 
   return (
     <>
+      <h2 className="text-xl border-b-2 border-slate-500  p-2 px-4 text-center">
+        Choose the type of chart you want
+      </h2>
       <div className="flex gap-2 m-4 flex-wrap justify-center">
         {typesOfCharts.map((string, index) => (
           <button
@@ -32,8 +34,7 @@ const Types = () => {
           </button>
         ))}
       </div>
-      <DataTable type={graph} />
-      <Table type={graph} />
+      {graph == "" ? " " : <Table type={graph} />}
       {/* <div>{graph}</div> */}
     </>
   );
