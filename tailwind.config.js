@@ -5,12 +5,11 @@ export default {
     extend: {
       colors: {
         color: {
-          1: "#AC6AFF",
-          2: "#FFC876",
-          3: "#FF776F",
-          4: "#7ADB78",
-          5: "#858DFF",
-          6: "#FF98E2",
+          1: "#4285F4",
+          2: "#E94235",
+          3: "#34A853",
+          4: "#FABB05",
+          bg: "#F6F9FF",
         },
       },
     },
