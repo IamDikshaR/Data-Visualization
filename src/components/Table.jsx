@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CreateGraph from "./CreateGraph";
 
 const Table = ({ type }) => {
@@ -6,6 +6,7 @@ const Table = ({ type }) => {
   const [columns, setColumns] = useState(2);
   const [tableData, setTableData] = useState([]);
   const [graph, showGraph] = useState(false);
+  const create = useRef(null);
 
   const handleRowChange = (e) => {
     const newRowValue = parseInt(e.target.value);
@@ -43,9 +44,16 @@ const Table = ({ type }) => {
     console.log("Submitting table data:", tableData);
     showGraph(true);
   };
+
+  useEffect(() => {
+    if (graph) {
+      create.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [graph]);
+
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-xl border border-slate-500 rounded-md p-2 px-4 min-w-80 text-center text-white bg-black">
+      <h2 className="text-xl rounded-md p-2 px-4 min-w-80 text-center text-white bg-color-3">
         Create {type} Table
       </h2>
       <div className="m-2">
@@ -81,8 +89,8 @@ const Table = ({ type }) => {
                   <input
                     className={
                       rowIndex == 0
-                        ? "border-1 bg-slate-600 text-white p-1 pl-2 rounded max-w-24"
-                        : "border-1 bg-slate-300 p-1 pl-2 rounded max-w-24"
+                        ? "border-1 bg-color-4 text-white p-1 pl-2 rounded max-w-24"
+                        : "border-1 bg-color-4/[0.2] p-1 pl-2 rounded max-w-24"
                     }
                     type="text"
                     value={cellData}
@@ -96,19 +104,21 @@ const Table = ({ type }) => {
       </table>
       <button
         type="submit"
-        className="border border-slate-500 rounded-md px-2 py-1 mb-4 text-center"
+        className="border border-slate-500 rounded-md px-2 py-1 mb-4 text-center hover:bg-color-4 hover:border-none hover:text-white"
         onClick={handleSubmit}
       >
         Create Graph 📈
       </button>
-      {graph && (
-        <CreateGraph
-          tableData={tableData}
-          rowIndex={rows}
-          colIndex={columns}
-          type={type}
-        />
-      )}
+      <div ref={create}>
+        {graph && (
+          <CreateGraph
+            tableData={tableData}
+            rowIndex={rows}
+            colIndex={columns}
+            type={type}
+          />
+        )}
+      </div>
     </div>
   );
 };

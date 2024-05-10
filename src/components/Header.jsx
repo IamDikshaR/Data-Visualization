@@ -11,9 +11,9 @@ const Header = ({ show, setShow, target }) => {
   }, [show]);
   return (
     <>
-      <div className="flex items-center justify-between min-h-12 bg-white border-b border-slate-400 px-4">
+      <div className="sticky top-0 z-10 flex items-center justify-between min-h-12 bg-white border-b border-slate-400 px-4">
         <div className="flex items-center gap-2">
-          <img src="./public/Icon.svg" alt="icon" className="w-8 h-8" />
+          <img src="/Icon.svg" alt="icon" className="w-8 h-8" />
           <h1 className="text-lg font-bold">Charts.make</h1>
         </div>
         <button
