@@ -45,12 +45,6 @@ const Table = ({ type }) => {
     showGraph(true);
   };
 
-  useEffect(() => {
-    if (graph) {
-      create.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [graph]);
-
   return (
     <div className="flex flex-col items-center">
       <h2 className="text-xl rounded-md p-2 px-4 min-w-80 text-center text-white bg-color-3">
@@ -107,18 +101,22 @@ const Table = ({ type }) => {
         className="border border-slate-500 rounded-md px-2 py-1 mb-4 text-center hover:bg-color-4 hover:border-none hover:text-white"
         onClick={handleSubmit}
       >
-        Create Graph 📈
-      </button>
-      <div ref={create}>
+        {graph ? "Ready!" : "Create Graph"}
         {graph && (
-          <CreateGraph
-            tableData={tableData}
-            rowIndex={rows}
-            colIndex={columns}
-            type={type}
-          />
+          <span className="ml-2 text-white bg-color-4 py-1 px-2 rounded-2xl">
+            ↓
+          </span>
         )}
-      </div>
+      </button>
+
+      {graph && (
+        <CreateGraph
+          tableData={tableData}
+          rowIndex={rows}
+          colIndex={columns}
+          type={type}
+        />
+      )}
     </div>
   );
 };

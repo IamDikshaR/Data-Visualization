@@ -11,7 +11,7 @@ const Create = ({ show, setShow, target }) => {
     }
   }, [show]);
   return (
-    <div className="mt-2 mb-8 flex justify-center">
+    <div className="mt-8 mb-8 flex justify-center sm:mt-0">
       <button
         className="bg-color-2 text-white min-w-40 min-h-14 rounded-lg"
         onClick={handleClick}

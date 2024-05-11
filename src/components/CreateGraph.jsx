@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 
 const CreateGraph = ({ tableData, rowIndex, colIndex, type }) => {
   const chart_div = useRef(null);
-  const [chartImageURL, setchartImageURL] = useState(null);
 
   useEffect(() => {
     google.charts.load("current", { packages: ["corechart"] });
@@ -54,6 +53,7 @@ const CreateGraph = ({ tableData, rowIndex, colIndex, type }) => {
         var chart = new google.visualization.SteppedAreaChart(
           chart_div.current
         );
+        chart.draw(data, options);
       };
       const renderBubble = () => {
         console.log("Bubble chart");
@@ -86,6 +86,7 @@ const CreateGraph = ({ tableData, rowIndex, colIndex, type }) => {
         var chart = new google.visualization.CandlestickChart(
           chart_div.current
         );
+        chart.draw(data, options);
       };
       const renderScatter = () => {
         console.log("Scatter chart");
@@ -134,20 +135,10 @@ const CreateGraph = ({ tableData, rowIndex, colIndex, type }) => {
       render();
     }
   }, []);
-  // const handleDownload = () => {
-  //   if (chartImageURL) {
-  //     const link = document.createElement("a");
-  //     link.href = chartImageURL;
-  //     link.download = "chart_image.jpg";
-  //     document.body.appendChild(link);
-  //     link.click();
-  //     document.body.removeChild(link);
-  //   }
-  // };
+
   return (
     <>
-      <div ref={chart_div}></div>
-      {/* {chartImageURL && <button onClick={handleDownload}>Download</button>} */}
+      <div ref={chart_div} className="mb-8"></div>
     </>
   );
 };
