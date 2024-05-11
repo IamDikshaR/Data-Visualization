@@ -18,7 +18,7 @@ Google Charts API: https://developers.google.com/chart
 
 ## Deployment
 
-https://data-visualization-p8m9hg4b1-diksha-rajs-projects.vercel.app
+https://data-visualization-hdn8vzbec-diksha-rajs-projects.vercel.app/
 
 ![screeshot1](./src/screenshots/Screenshot%202024-05-11%20175021.png)
 
