@@ -16,9 +16,7 @@ Welcome to our data visualization web app, where the power of your data meets th
 
 Google Charts API: https://developers.google.com/chart
 
-## Deployment
-
-https://data-visualization-p8m9hg4b1-diksha-rajs-projects.vercel.app
+## The App
 
 ![screeshot1](./src/screenshots/Screenshot%202024-05-11%20175021.png)
 
