@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Intro from "./components/Intro";
 import Instructions from "./components/Instructions";
 import Types from "./components/Types";
-import Create from "./Create";
+import Create from "./components/Create";
 
 function App() {
   const target = useRef(null);
