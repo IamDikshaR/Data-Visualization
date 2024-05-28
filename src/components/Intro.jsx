@@ -2,7 +2,7 @@ import React from "react";
 
 const Intro = () => {
   return (
-    <div className="mb-4 flex flex-col items-center gap-4 justify-center">
+    <div className="mt-4 mb-4 flex flex-col items-center gap-4 justify-center sm:mt-0">
       <h1 className="text-center text-xl font-bold sm:text-4xl">
         What is Charts.make?
       </h1>
